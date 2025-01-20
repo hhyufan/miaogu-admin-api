@@ -1,0 +1,2 @@
+require('./objectExt')
+module.exports = {}
