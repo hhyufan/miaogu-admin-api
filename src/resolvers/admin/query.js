@@ -1,13 +1,13 @@
-module.exports = {
+export default {
     async admin(_parent, { adminname }, { models }) {
-        return models.Admin.findOne({ adminname })
+        return models.Admin.findOne({ adminname });
     },
 
     async admins(_parent, _args, { models }) {
-        return models.Admin.find({})
+        return models.Admin.find({});
     },
 
     async me(_parent, _args, { models, admin }) {
-        return models.Admin.findById(admin.id)
+        return models.Admin.findById(admin.id);
     }
-}
+};

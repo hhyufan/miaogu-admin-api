@@ -1,5 +1,6 @@
-const {gql} = require("apollo-server-express")
-module.exports = gql`
+import { gql } from "apollo-server-express";
+
+export default gql`
     scalar DateTime
     extend type Query {
         admin(adminname: String!): Admin
@@ -9,11 +10,10 @@ module.exports = gql`
     extend type Mutation {
         signUp(adminname: String!, email: String!, password: String!): String!
         signIn(adminname: String, email: String, password: String!): String!
-
     }
     type Admin {
         id: ID!
         adminname: String!
         email: String!
     }
-`
+`;

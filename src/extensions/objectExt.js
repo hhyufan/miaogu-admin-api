@@ -1,7 +1,8 @@
 Object.prototype.print = function() {
-    console.log(this)
+    console.log(this);
     return this;
 };
+
 Object.prototype.sanitize = async function(callback) {
     const result = Object.entries(this);
     const keys = Object.keys(this);
@@ -25,4 +26,5 @@ Object.prototype.sanitize = async function(callback) {
     // 过滤掉 undefined 的值
     return Object.fromEntries(result.filter(([_key, value]) => value !== undefined));
 };
-module.exports = {};
+
+export default {}; // 导出空对象

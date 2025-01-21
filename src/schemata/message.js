@@ -1,5 +1,6 @@
-const {gql} = require("apollo-server-express")
-module.exports = gql`
+import { gql } from "apollo-server-express";
+
+export default gql`
     extend type Query {
         message(name: String!): Message!
         messageFeed(model: String!, cursor: String): MessageFeed
@@ -20,4 +21,4 @@ module.exports = gql`
         cursor: String!
         hasNextPage: Boolean!
     }
-`
+`;

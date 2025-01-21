@@ -1,9 +1,12 @@
-const Admin = require("./admin")
-const User = require("./user")
-const Friend = require("./friend")
-const Message = require("./message")
-const { GraphQLDateTime } = require("graphql-iso-date")
-module.exports = {
+import Admin from "./admin/index.js";
+import User from "./user/index.js";
+import Friend from "./friend/index.js";
+import Message from "./message/index.js";
+
+import graphql_cjs from "graphql-iso-date";
+const { GraphQLDateTime } = graphql_cjs;
+
+export default {
     Query: {
         ...Admin.Query,
         ...User.Query,
@@ -17,4 +20,4 @@ module.exports = {
         ...Message.Mutation
     },
     DateTime: GraphQLDateTime
-}
+};
